@@ -1,0 +1,9 @@
+version: '3'
+services:
+  tomcat:
+    build: .
+    volumes:
+      - "./target/ds-test.war:/opt/tomcat/webapps/ds-test.war"
+      - "./context.xml:/opt/tomcat/conf/context.xml"
+  db:
+    image: postgres:9.6
